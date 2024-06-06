@@ -1,10 +1,17 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import ReactDOM from 'react-dom/client';
+import { HelloWordApp } from './HelloWordApp';
+import { FirstApp } from './FirstApp';
+import { CounterApp } from './CounterApp';
+import './Styles.scss';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+
+const App = () => {
+    return (<h1> Hola Mundo </h1>);
+}
+
+ReactDOM.createRoot( document.getElementById('root') ).render(
+    <React.StrictMode>
+        <CounterApp value={ 5 }/>
+    </React.StrictMode>
 )
