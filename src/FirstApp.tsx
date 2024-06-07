@@ -1,12 +1,11 @@
-import PropTypes from 'prop-types';
-
+// import PropTypes from 'prop-types';
 
 
 // si las funciones o variables no tienen dependencia con lo utilizado dentro de FirstApp
 //mejor dejarlo por fuera para que no ocupe espacio en la memoria el repintado
 const newMessage = { 
-    user: 'Luciana',
-    saludo: 'Hola'
+    user: 'Lu',
+    saludo: 'Saludar en H1'
 };
 
 const getMessage = () => {
@@ -26,12 +25,14 @@ const FirstApp = ( { title, subTitle}: { title: string, subTitle: string}) => {
   return (
     <>
     {/* en vez de props.title con la desestructuracion: */}
-        <h3>{ title }</h3>
+        <h1 data-testid="test-title">{ title }</h1>
+        <p>{ subTitle }</p>
         <p>{ subTitle }</p>
 
-        <h1>{ getMessage() }</h1>
 
-        <h1>{ newMessage.user}</h1>
+        <h2>{ getMessage() }</h2>
+
+        <h2>{ newMessage.user}</h2>
 
         {/* Si necesito enviar el objeto entero:
       <code>{ JSON.stringify(newMessage) }</code> */}
@@ -40,14 +41,14 @@ const FirstApp = ( { title, subTitle}: { title: string, subTitle: string}) => {
   );
 };
 
-FirstApp.prototype = {
-    //la propiedad debe ser string y debe ser proporcionado
-    title: PropTypes.string.isRequired,
-    subTitle: PropTypes.string.isRequired,
-}
+// FirstApp.propTypes = {
+//     //la propiedad debe ser string y debe ser proporcionado
+//     title: PropTypes.string.isRequired,
+//     subTitle: PropTypes.string.isRequired,
+// }
 
-FirstApp.defaultProps = {
-    subTitle: 'subTitle por default'
-}
+// FirstApp.defaultProps = {
+//     subTitle: 'subTitle por default'
+// }
 
 export { FirstApp} ;
