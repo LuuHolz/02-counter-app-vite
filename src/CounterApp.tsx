@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 
@@ -24,13 +24,13 @@ const CounterApp = ({ value }: { value: number }) => {
         {/* si no mando un EVENTO solo nombro la funcion */}
         <button onClick={ handleAdd }> +1 </button>
         <button onClick={ handSubstract }> -1 </button>
-        <button onClick={ handleReset }> Reset </button>
+        <button aria-label="btn-reset" onClick={ handleReset }> Reset </button>
     </>
   )
 }
 
-CounterApp.prototype = {
-    value: PropTypes.number.isRequired
-}
+// CounterApp.propType = {
+//     value: PropTypes.number.isRequired
+// }
 
 export { CounterApp }
